@@ -6,11 +6,7 @@ import BudgetCard from './components/BudgetCard';
 function App() {
   return (
     <Container className="my-4 p-3 bg-dark" >
-      <Stack direction="horizontal" gap="2" className="mb-4">
         <h1 className="me-auto text-white"> 🐖 PresuPuerco</h1>
-        <Button variant="primary">Primary</Button>
-        <Button variant="outline-primary">Nueva</Button>
-      </Stack>
       <div 
         style={{ 
           display: "grid", 
@@ -23,6 +19,10 @@ function App() {
         <BudgetCard name="ahorro" gray amount={100} max={1000}></BudgetCard>
         <BudgetCard name="Comida" gray amount={1100} max={1000}></BudgetCard>
         </div>
+      <Stack direction="horizontal" gap="2" className="mb-4">
+        <Button variant="primary" className="ms-auto">Agregar</Button>
+        {/* <Button variant="outline-primary">Nueva</Button> */}
+      </Stack>
     </Container>
     
   );
