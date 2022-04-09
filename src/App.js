@@ -5,9 +5,9 @@ import BudgetCard from './components/BudgetCard';
 
 function App() {
   return (
-    <Container className="my-4">
+    <Container className="my-4 p-3 bg-dark" >
       <Stack direction="horizontal" gap="2" className="mb-4">
-        <h1 className="me-auto"> 🐖 PresuPuerco</h1>
+        <h1 className="me-auto text-white"> 🐖 PresuPuerco</h1>
         <Button variant="primary">Primary</Button>
         <Button variant="outline-primary">Nueva</Button>
       </Stack>
@@ -20,7 +20,8 @@ function App() {
         }}>
 
         <BudgetCard name="entretenimiento" gray amount={700} max={1000}></BudgetCard>
-
+        <BudgetCard name="ahorro" gray amount={100} max={1000}></BudgetCard>
+        <BudgetCard name="Comida" gray amount={1100} max={1000}></BudgetCard>
         </div>
     </Container>
     

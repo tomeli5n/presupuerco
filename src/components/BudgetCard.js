@@ -5,9 +5,9 @@ export default function BudgetCard( {name, amount, max, gray}) {
 
     const classNames = []
     if (amount > max) {
-        classNames.push("bg-danger", "bg-opacity-10");
+        classNames.push("text-white", "bg-danger", "bg-opacity-10");
     } else if (gray) {
-        classNames.push("bg-light");
+        classNames.push("bg-secondary");
     }
   return (
     <Card className={classNames.join(" ")}>
@@ -30,8 +30,8 @@ export default function BudgetCard( {name, amount, max, gray}) {
                 now={amount}
                 />
         <Stack direction="horizontal" gap="2" className="mt-4">
-            <Button variant="outline-primary" className="ms-auto">Add</Button>
-            <Button variant="outline-secondary">View expenses</Button>
+            <Button variant="outline-secondary"  className="ms-auto">Detalles</Button>
+            <Button variant="outline-primary">Sumar</Button>
         </Stack>
         </Card.Body>
     </Card>
