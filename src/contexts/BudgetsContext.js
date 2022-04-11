@@ -5,12 +5,25 @@ const BudgetsContext = React.createContext();
 export function useBudgets() {
     return useContext(BudgetsContext);
 }
+// // budgets
+// {
+//     id:
+//     name:
+//     max:
+// },
 
+// //expenses
+// {
+//     id:
+//     budgetId:
+//     amount:
+//     description:
+// }
 export const BudgetsProvider = ({ children }) => {
     const [budgets, setBudgets] = useState([])
     const [expenses, setExpenses] = useState([])
-    function getBudgetExpenses() {
-        
+    function getBudgetExpenses(budgetId) {
+        return expenses.filter(expense => expense.budgetId === budgetId)
     }
     function addExpense() {
     
