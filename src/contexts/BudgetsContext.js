@@ -26,8 +26,10 @@ export const BudgetsProvider = ({ children }) => {
     function getBudgetExpenses(budgetId) {
         return expenses.filter(expense => expense.budgetId === budgetId)
     }
-    function addExpense() {
-    
+    function addExpense(description, amount, budgetId) {
+        setExpenses(prevExpenses => {
+            return [...prevExpenses, {id: uuidv4(), description, amount, budgetId}]
+        })
     }
     function addBudget(name, max) {
         if (prevBudgets.find(budget => budget.name === name)) {
