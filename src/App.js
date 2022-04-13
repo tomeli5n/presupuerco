@@ -2,9 +2,11 @@
 import { Button, Stack } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import BudgetCard from './components/BudgetCard';
+import AddBudgetModal from './components/AddBudgetModal';
 
 function App() {
   return (
+    <div className="App">
     <Container className="my-4 p-3 bg-dark" >
         <h1 className="me-auto text-white"> 🐖 PresuPuerco</h1>
       <div 
@@ -24,7 +26,8 @@ function App() {
         {/* <Button variant="outline-primary">Nueva</Button> */}
       </Stack>
     </Container>
-    
+    <AddBudgetModal show/>
+  </div>
   );
 }
 
