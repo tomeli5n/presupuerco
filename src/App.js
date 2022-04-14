@@ -19,6 +19,7 @@ function App() {
           gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
           gap: "1rem",
           alignItems: "flex-start",
+          margin: "1rem",
         }}>
           <BudgetCard name="entretenimiento" gray amount={700} max={1000}></BudgetCard>
           <BudgetCard name="ahorro" gray amount={100} max={1000}></BudgetCard>
@@ -28,6 +29,7 @@ function App() {
           return (
           <BudgetCard
             key = {budget.id}
+            gray
             name = {budget.name}
             amount = {budget.amount}
             max = {budget.max}
