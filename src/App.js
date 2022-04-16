@@ -9,7 +9,15 @@ import { useBudgets } from './contexts/BudgetsContext';
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
+  const [showAddExpenseModal, setShowAddExpenseModal] = useState(false);
+  const [addExpenseModalBudgetId, setAddExpenseModalBudgetId] = useState();
   const { budgets, getBudgetExpenses } = useBudgets();
+
+  function openAddExpenseModal(budgetId) {
+    setShowAddExpenseModal(true);
+    setAddExpenseModalBudgetId(budgetId);
+
+  }
   return (
     <>
     <Container className="my-4 p-3 bg-dark" >
@@ -35,18 +43,27 @@ function App() {
             name = {budget.name}
             amount = {amount}
             max = {budget.max}
+            onAddExpenseClick={() => openAddExpenseModal(budget.id)}
             />
           )
         })}
       </div>
       <Stack direction="horizontal" gap="2" className="mb-4">
-        <Button variant="primary" className="ms-auto" 
+        <Button variant="primary" className="ms-auto"
           onClick={()=> setShowAddBudgetModal(true)}>Agregar Presupuesto</Button>
-        <Button variant="outline-primary">Nueva</Button>
+        <Button
+          variant="outline-primary"
+          onClick={openAddExpenseModal}>Nueva</Button>
       </Stack>
     </Container>
-    <AddBudgetModal show={showAddBudgetModal} handleClose={() => setShowAddBudgetModal(false)}/>
-    <AddExpenseModal show/>
+    <AddBudgetModal
+      show={showAddBudgetModal}
+      handleClose={() => setShowAddBudgetModal(false)}/>
+    <AddExpenseModal
+      show={showAddExpenseModal}
+      defaultBudgetId = {addExpenseModalBudgetId}
+      handleClose={() => setShowAddExpenseModal(false)}/>
+
   </>
   );
 }
