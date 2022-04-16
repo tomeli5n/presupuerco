@@ -30,9 +30,9 @@ function App() {
           alignItems: "flex-start",
           margin: "1rem",
         }}>
-          <BudgetCard name="entretenimiento" gray amount={700} max={1000}></BudgetCard>
+          {/* <BudgetCard name="entretenimiento" gray amount={700} max={1000}></BudgetCard>
           <BudgetCard name="ahorro" gray amount={100} max={1000}></BudgetCard>
-          <BudgetCard name="Comida" gray amount={1100} max={1000}></BudgetCard>
+          <BudgetCard name="Comida" gray amount={1100} max={1000}></BudgetCard> */}
 
         {budgets.map(budget => {
           const amount = getBudgetExpenses(budget.id).reduce((total, expense) => total+expense.amount , 0)
