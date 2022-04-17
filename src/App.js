@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import AddBudgetModal from './components/AddBudgetModal';
 import AddExpenseModal from './components/AddExpenseModal';
 import BudgetCard from './components/BudgetCard';
+import UncategorizedBudgetCard from './components/UncategorizedBudgetCard';
 import { useState } from "react"
 import { useBudgets } from './contexts/BudgetsContext';
 
@@ -47,6 +48,7 @@ function App() {
             />
           )
         })}
+        <UncategorizedBudgetCard />  
       </div>
       <Stack direction="horizontal" gap="2" className="mb-4">
         <Button variant="primary" className="ms-auto"
@@ -58,7 +60,8 @@ function App() {
     </Container>
     <AddBudgetModal
       show={showAddBudgetModal}
-      handleClose={() => setShowAddBudgetModal(false)}/>
+      handleClose={() => setShowAddBudgetModal(false)}
+      />
     <AddExpenseModal
       show={showAddExpenseModal}
       defaultBudgetId = {addExpenseModalBudgetId}
