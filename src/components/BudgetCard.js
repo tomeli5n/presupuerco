@@ -23,13 +23,15 @@ export default function BudgetCard( {name, amount, max, gray, onAddExpenseClick}
                     )}
                     </div>
             </Card.Title>
-            <ProgressBar 
-                className="rounded-pill"
-                variant={getProgressBarVariant(amount, max)}
-                min={0}
-                max={max}
-                now={amount}
+            {max && (
+                <ProgressBar 
+                    className="rounded-pill"
+                    variant={getProgressBarVariant(amount, max)}
+                    min={0}
+                    max={max}
+                    now={amount}
                 />
+            )}
         <Stack direction="horizontal" gap="2" className="mt-4">
             <Button variant="outline-secondary"
             className="ms-auto">Detalles</Button>
