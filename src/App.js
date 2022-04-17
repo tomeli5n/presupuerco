@@ -7,7 +7,7 @@ import BudgetCard from './components/BudgetCard';
 import UncategorizedBudgetCard from './components/UncategorizedBudgetCard';
 import TotalBudgetCard from './components/TotalBudgetCard';
 import { useState } from "react"
-import { useBudgets } from './contexts/BudgetsContext';
+import { UNCATEGORIZED_BUDGET_ID, useBudgets } from './contexts/BudgetsContext';
 
 function App() {
   const [showAddBudgetModal, setShowAddBudgetModal] = useState(false);
@@ -49,7 +49,9 @@ function App() {
             />
           )
         })}
-        <UncategorizedBudgetCard />
+        <UncategorizedBudgetCard 
+          onAddExpenseClick={() => openAddExpenseModal(UNCATEGORIZED_BUDGET_ID)}
+            />
         <TotalBudgetCard />  
       </div>
       <Stack direction="horizontal" gap="2" className="mb-4">
